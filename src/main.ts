@@ -4,8 +4,8 @@ import { config } from 'aws-sdk';
 
 async function bootstrap() {
   config.update({
-    accessKeyId: 'AKIARRX4CPY3XNEK6X4Z',
-    secretAccessKey: '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',
+    accessKeyId: '',
+    secretAccessKey: '',
     region: 'eu-central-1',
   });
 
