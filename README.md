@@ -2,6 +2,6 @@
 ##
 
 ## Описание API:
-### cade block /cats
+### code block /cats
 
 
