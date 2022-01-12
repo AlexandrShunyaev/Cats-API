@@ -1,7 +1,7 @@
-#Cats-API
+# Cats-API
 ##
 
-##Описание API:
-###/cats
+## Описание API:
+### /cats
 
 
