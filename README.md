@@ -2,6 +2,9 @@
 ##
 
 ## Описание API:
-### code block /cats
 
+code block 
+```
+###/cats
+```
 
