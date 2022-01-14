@@ -2,8 +2,8 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity({ name: 'cats' })
 export class Cat {
-  @PrimaryGeneratedColumn({ name: 'cat_id' })
-  public catId: number;
+  @PrimaryGeneratedColumn('uuid',{ name: 'cat_id'})
+  public catId: string;
 
   @Column()
   public name: string;
@@ -20,8 +20,9 @@ export class Cat {
   @Column()
   public price: number;
 
+
   @Column({ nullable: true })
-  public img: string;
+  public img?: string;
 
   @Column({ name: 'is_booked' })
   public isBooked: boolean;

@@ -15,7 +15,7 @@ import { UpdateCatDto } from './dto/update-cat.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Express } from 'express';
 
-@Controller('cats')
+@Controller('/cats')
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
@@ -25,7 +25,7 @@ export class CatsController {
   }
 
   @Get('/get_one/:id')
-  async getOne(@Param('id') id: number) {
+  async getOne(@Param('id') id: string) {
     return await this.catsService.getOne(id);
   }
 
@@ -46,28 +46,27 @@ export class CatsController {
 
   @Post('/upload_img/:id')
   @UseInterceptors(FileInterceptor('file'))
-  async uploadImg(@Param('id') id: number, @UploadedFile() file: Express.Multer.File) {
-    //console.log(file);
+  async uploadImg(@Param('id') id: string, @UploadedFile() file: Express.Multer.File) {
     await this.catsService.uploadImg(id, file.buffer, file.originalname);
   }
 
   @Delete('/remove/:id')
-  async delete(@Param('id') id: number) {
+  async delete(@Param('id') id: string) {
     await this.catsService.remove(id);
   }
 
   @Put('/update/:id')
-  async update(@Body() dto: UpdateCatDto, @Param('id') id) {
+  async update(@Body() dto: UpdateCatDto, @Param('id') id: string) {
     await this.catsService.update(dto, id);
   }
 
   @Put('/book/:id')
-  async book(@Param('id') id: number) {
+  async book(@Param('id') id: string) {
     await this.catsService.book(id);
   }
 
   @Put('/unbook/:id')
-  async unbook(@Param('id') id: number) {
+  async unbook(@Param('id') id: string) {
     await this.catsService.unbook(id);
   }
 }
