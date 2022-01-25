@@ -1,6 +1,8 @@
+require('dotenv').config({ path: `../${process.env.NODE_ENV}.env` });
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { config } from 'aws-sdk';
+
 
 async function bootstrap() {
   config.update({
